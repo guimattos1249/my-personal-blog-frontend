@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 
+import './style.css';
+
 import api from '../../services/api';
 
 function Login () {
@@ -12,9 +14,6 @@ function Login () {
   async function handleSubmit (e) {
     e.preventDefault();
 
-    console.log(email);
-    console.log(password);
-
     try {
       const response = await api.post('/singin', {
         email,
@@ -22,6 +21,7 @@ function Login () {
       });
   
       localStorage.setItem('email', response.data.email);
+      localStorage.setItem('first_name', response.data.first_name);
       localStorage.setItem('token', response.data.token);
       
       history.push('/dashboard');
@@ -32,40 +32,49 @@ function Login () {
   }
 
   return (
-    <>
-      <h1>Faça seu Login</h1>
+    <div className="container">
+      <div className="card">
+        <div className="box"></div>
+        <h1 className="login-title">my-personal-blog</h1>
+        <form onSubmit={handleSubmit}>
+          <div className="content">
+            <label htmlFor="email">
+              Email
+            </label>
+            <input 
+              className="inputs"
+              type="text" 
+              name="email" 
+              id="email" 
+              placeholder="Digite seu Email"
+              onChange={e => setEmail(e.target.value)}
+            />
 
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="email">
-          Email
-        </label>
-        <input 
-          type="text" 
-          name="email" 
-          id="email" 
-          placeholder="Digite seu Email"
-          onChange={e => setEmail(e.target.value)}
-        />
+            <label htmlFor="password">
+              Senha
+            </label>
+            <input
+              className="inputs" 
+              type="password" 
+              name="password" 
+              id="password" 
+              placeholder="Digite sua Senha"
+              onChange={e => setPassword(e.target.value)}
+            />
 
-        <label htmlFor="password">
-          Senha
-        </label>
-        <input 
-          type="password" 
-          name="password" 
-          id="password" 
-          placeholder="Digite sua Senha"
-          onChange={e => setPassword(e.target.value)}
-        />
+            <button type="submit" className="button">
+              Fazer Login
+            </button>
+            <Link to='/register' className="register">
+              <p>Não tem Cadastro? Cadastre-se</p>
+            </Link>
+          </div>
+        </form>
 
-        <button type="submit">
-          Fazer Login
-        </button>
-      </form>
-      <Link to='/register'>
-        <p>registrar!</p>
-      </Link>
-    </>
+        
+      </div>
+      
+    </div>
   );
 }
 
