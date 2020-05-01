@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 import api from '../../services/api';
-
 
 function Login () {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+
+  const history = useHistory();
 
   async function handleSubmit (e) {
     e.preventDefault();
@@ -20,12 +21,13 @@ function Login () {
         password
       });
   
-      console.log(response.data.email);
-      console.log(response.data.password);
-      console.log(response.data.token);      
+      localStorage.setItem('email', response.data.email);
+      localStorage.setItem('token', response.data.token);
+      
+      history.push('/dashboard');
     }
     catch (err) {
-      console.log(err);
+      console.log('Não foi possível Realizar o login, tente novamente!');
     }
   }
 
