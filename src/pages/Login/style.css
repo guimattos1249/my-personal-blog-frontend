@@ -25,6 +25,11 @@
   max-height: 350px;
   background-color: #FFF;
   box-shadow: 3px 3px #ebebeb;
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: scale(1.01);
 }
 
 .container-title {
@@ -37,25 +42,24 @@
   margin-top: 20px;
   margin-bottom: 30px;
   text-align: center;
-  transition: opacity 0.2s;
-  transition: color 0.2s;
+  transition: opacity 1s;
 }
 
 .login-title:hover {
   opacity: 0.8;
-  color: #344969;
 }
 
 .inputs {
   margin: 0 auto;
   margin-bottom: 20px;
+  transition: border 0.2s;
 }
 
 .register {
   display: flex;
   align-items: center;
   margin-top: 10px;
-  color: #646479;
+  color: #2e53a3;
   font-size: 14px;
   text-decoration: none;
   font-weight: 500;
@@ -64,4 +68,8 @@
 
 .register:hover {
   opacity: 0.8;
+}
+
+.inputs:focus {
+  border: 1px solid #6c96d4;
 }
