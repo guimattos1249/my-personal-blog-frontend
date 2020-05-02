@@ -35,7 +35,7 @@ function Register () {
       history.push('/dashboard');
     }
     catch (err) {
-      console.log('Não foi possível Realizar o cadastro, tente novamente!');
+      alert('Não foi possível Realizar o cadastro, tente novamente!');
     }
   }
 

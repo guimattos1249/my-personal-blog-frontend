@@ -27,7 +27,7 @@ function Login () {
       history.push('/dashboard');
     }
     catch (err) {
-      console.log('Não foi possível Realizar o login, tente novamente!');
+      alert('Não foi possível Realizar o login. Verifique seu usuário e senha e tente novamente!');
     }
   }
 
