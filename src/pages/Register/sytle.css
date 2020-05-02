@@ -66,3 +66,28 @@
 .register:hover {
   opacity: 0.8;
 }
+
+@media(max-width: 650px) {
+  .card-register {
+    width: 90%;
+    height: 100%;
+    max-height: 520px;
+    background-color: #FFF;
+    box-shadow: 3px 3px #ebebeb;
+    transition: transform 0.2s;
+    animation: cardIn 500ms;
+  }
+
+  .name-block {
+    display: inline;
+  }
+  
+  .name-block input + input {
+    margin-left: 0px;
+  }
+
+  .content-register {
+    margin: auto;
+    width: 90%;
+  }
+}
