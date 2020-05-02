@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
+import { FiArrowLeft } from 'react-icons/fi';
 
 import api from '../../services/api';
+
+import './sytle.css';
 
 function Register () {
   const [first_name, setFirstName] = useState('');
@@ -34,41 +37,41 @@ function Register () {
     catch (err) {
       console.log('Não foi possível Realizar o cadastro, tente novamente!');
     }
-
-
   }
 
   return (
-    <div>
-      <div className="card">
-        <h1>Cadastre-se</h1>
+    <div className="container">
+      <div className="card-register">
+        <div className="box"></div>
+
+        <h1 className="register-title">Cadastre-se</h1>
+        
         <form onSubmit={handleRegister}>
-          <div className="content">
-            <label htmlFor="first_name">
+
+          <div className="content-register">
+            <label htmlFor="first_name" className="labels">
               Nome
             </label>
-            <input 
-              className="inputs"
-              type="text" 
-              name="first_name" 
-              id="first_name" 
-              placeholder="Digite seu Nome"
-              onChange={e => setFirstName(e.target.value)}
-            />
-
-            <label htmlFor="last_name">
-              Sobrenome
-            </label>
-            <input 
-              className="inputs"
-              type="text" 
-              name="last_name" 
-              id="last_name" 
-              placeholder="Digite seu Sobrenome"
-              onChange={e => setLastName(e.target.value)}
-            />
-
-            <label htmlFor="email">
+            <div className="name-block">
+              <input 
+                className="inputs"
+                type="text" 
+                name="first_name" 
+                id="first_name" 
+                placeholder="Digite seu Nome"
+                onChange={e => setFirstName(e.target.value)}
+              />
+              <input 
+                className="inputs"
+                type="text" 
+                name="last_name" 
+                id="last_name" 
+                placeholder="Digite seu Sobrenome"
+                onChange={e => setLastName(e.target.value)}
+              />
+            </div>
+          
+            <label htmlFor="email" className="labels">
               Email
             </label>
             <input 
@@ -80,7 +83,7 @@ function Register () {
               onChange={e => setEmail(e.target.value)}
             />
 
-            <label htmlFor="password">
+            <label htmlFor="password" className="labels">
               Senha
             </label>
             <input
@@ -92,11 +95,14 @@ function Register () {
               onChange={e => setPassword(e.target.value)}
             />
 
-            <button type="submit" className="button">
-              Cadastrar
-            </button>
+            <div className="button-class">
+              <button type="submit" className="button">
+                Cadastrar
+              </button>
+            </div>
 
-            <Link to='/'>
+            <Link to='/' className="links">
+              <FiArrowLeft size={20} color="#2e53a3" />
               <p>Voltar para menu inicial!</p>
             </Link>
           </div>

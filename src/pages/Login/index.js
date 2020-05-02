@@ -38,7 +38,7 @@ function Login () {
         <h1 className="login-title">my-personal-blog</h1>
         <form onSubmit={handleSubmit}>
           <div className="content">
-            <label htmlFor="email">
+            <label htmlFor="email" className="labels">
               Email
             </label>
             <input 
@@ -50,7 +50,7 @@ function Login () {
               onChange={e => setEmail(e.target.value)}
             />
 
-            <label htmlFor="password">
+            <label htmlFor="password" className="labels">
               Senha
             </label>
             <input
@@ -65,7 +65,7 @@ function Login () {
             <button type="submit" className="button">
               Fazer Login
             </button>
-            <Link to='/register' className="register">
+            <Link to='/register' className="links login">
               <p>Não tem Cadastro? Cadastre-se</p>
             </Link>
           </div>

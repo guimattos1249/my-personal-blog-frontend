@@ -1,0 +1,68 @@
+.content-register {
+  margin: auto;
+  max-width: 575px;
+}
+
+.button-class {
+  margin: auto;
+  max-width: 275px;
+}
+
+.box {
+  background-color: #206de0;
+  height: 8px;
+  width: 100%;
+}
+
+.card-register {
+  width: 100%;
+  max-width: 600px;
+  height: 100%;
+  max-height: 450px;
+  background-color: #FFF;
+  box-shadow: 3px 3px #ebebeb;
+  transition: transform 0.2s;
+  animation: cardIn 500ms;
+}
+
+.container-title {
+  background-color: #ebebeb;
+}
+
+.name-block {
+  display: flex;
+}
+
+.name-block input + input {
+  margin-left: 5px;
+}
+
+.register-title {
+  font-size: 22pt;
+  color: #496083;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  text-align: center;
+  transition: opacity 1s;
+  transition: transform 0.2s;
+}
+
+.register-title:hover {
+  opacity: 0.8;
+  transform: scale(1.01);
+}
+
+.register {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  color: #2e53a3;
+  font-size: 14px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity 0.2s;
+}
+
+.register:hover {
+  opacity: 0.8;
+}
