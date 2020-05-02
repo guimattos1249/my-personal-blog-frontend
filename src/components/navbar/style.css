@@ -1,0 +1,38 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 45px;
+  background-color: #0375B4;
+}
+
+.nav-link {
+  margin-left: 15px;
+  color: #FFF;
+  font-size: 16px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity 0.2s;
+  transition: transform 0.2s;
+}
+
+.nav-link:hover {
+  opacity: 0.8;
+  transform: scale(1.01);
+}
+
+.logo {
+  font-size: 20px;
+  color: #FFF;
+  margin-right: 10px;
+}
+
+.about {
+  margin-left: auto;
+  margin-right: 15px;
+}
+
+.pipe {
+  font-size: 20px;
+  color: #FFF;
+}

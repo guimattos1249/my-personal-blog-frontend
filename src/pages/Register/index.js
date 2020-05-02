@@ -4,7 +4,7 @@ import { FiArrowLeft } from 'react-icons/fi';
 
 import api from '../../services/api';
 
-import './sytle.css';
+import './style.css';
 
 function Register () {
   const [first_name, setFirstName] = useState('');
