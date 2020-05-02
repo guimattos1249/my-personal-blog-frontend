@@ -36,6 +36,7 @@ function Register () {
     }
     catch (err) {
       alert('Não foi possível Realizar o cadastro, tente novamente!');
+      console.log(err);
     }
   }
 

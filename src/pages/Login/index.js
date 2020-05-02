@@ -28,6 +28,7 @@ function Login () {
     }
     catch (err) {
       alert('Não foi possível Realizar o login. Verifique seu usuário e senha e tente novamente!');
+      console.log(err);
     }
   }
 
