@@ -2,13 +2,14 @@ import React, { useState } from 'react';
 
 import Navbar from '../../components/navbar';
 
+import getToken from '../../components/getToken';
+
 import api from '../../services/api';
 
 
 function NewCategory () {
   const [description, setDescription] = useState('');
-  const token = localStorage.getItem('token');
-  const AuthStr = 'Bearer '.concat(token);
+  const AuthStr = getToken();
 
 
   async function handleCategory (e) {
