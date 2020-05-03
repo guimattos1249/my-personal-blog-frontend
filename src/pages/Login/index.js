@@ -44,7 +44,9 @@ function Login () {
             </label>
             <input 
               className="inputs"
-              type="text" 
+              type="text"
+              value={email}
+              required
               name="email" 
               id="email" 
               placeholder="Digite seu Email"
@@ -56,7 +58,9 @@ function Login () {
             </label>
             <input
               className="inputs" 
-              type="password" 
+              type="password"
+              value={password}
+              required 
               name="password" 
               id="password" 
               placeholder="Digite sua Senha"

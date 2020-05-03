@@ -23,7 +23,6 @@
 
 .logo {
   font-size: 20px;
-  color: #FFF;
   margin-right: 10px;
 }
 
@@ -35,4 +34,19 @@
 .right-group {
   margin-left: auto;
   margin-right: 15px;
+}
+
+.linkb {
+  margin-left: 15px;
+  color: #FFF;
+  font-size: 16px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity 2s;
+  transition: transform 2s;
+}
+
+.linkb:hover {
+  opacity: 0.8;
+  transform: scale(1.01);
 }

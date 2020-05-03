@@ -56,7 +56,8 @@ function Register () {
             <div className="name-block">
               <input 
                 className="inputs"
-                type="text" 
+                type="text"
+                value={first_name} 
                 name="first_name" 
                 id="first_name" 
                 placeholder="Digite seu Nome"
@@ -64,7 +65,8 @@ function Register () {
               />
               <input 
                 className="inputs"
-                type="text" 
+                type="text"
+                value={last_name}
                 name="last_name" 
                 id="last_name" 
                 placeholder="Digite seu Sobrenome"
@@ -77,7 +79,9 @@ function Register () {
             </label>
             <input 
               className="inputs"
-              type="text" 
+              type="text"
+              value={email}
+              required
               name="email" 
               id="email" 
               placeholder="Digite seu Email"
@@ -89,7 +93,9 @@ function Register () {
             </label>
             <input
               className="inputs" 
-              type="password" 
+              type="password"
+              value={password}
+              required
               name="password" 
               id="password" 
               placeholder="Digite sua Senha"

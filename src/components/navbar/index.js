@@ -17,22 +17,26 @@ function Navbar () {
       <Link to='/dashboard' className="nav-link logo">
         my-personal-blog
       </Link>
+
       <p className="pipe">|</p>
-      <Link to='/' className="nav-link">
+
+      <Link to='/newpost' className="nav-link">
         Novo Post
       </Link>
-      <Link to='/dashboard' className="nav-link">
+      <Link to='/newcategory' className="nav-link">
         Nova Categoria
       </Link>
+
       <div className="right-group">
         {/* TODO -> Fix hover on this two links */}
         <Link to='/dashboard' className="nav-link">
           Sobre
         </Link>
-        <Link className="nav-link" onClick={handleLogout}>
+        <Link to='/' className="nav-link" onClick={handleLogout}>
           Sair
         </Link>
       </div>
+      
     </nav>
   );
 }
