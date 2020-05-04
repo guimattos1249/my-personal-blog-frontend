@@ -1,4 +1,11 @@
 /* fix scroll bar */
+.container-content {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
 
 .infos {
   width: 100%;
@@ -10,15 +17,12 @@
   animation: cardIn 500ms;
 }
 
-.container-content {
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-
 .content-infos {
   margin: auto;
   max-width: 775px;
 }
+
+.input-block {
+  display: flex;
+}
+

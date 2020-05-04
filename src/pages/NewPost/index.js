@@ -72,19 +72,48 @@ function NewPost () {
       {/* TODO -> Style page NewPost */}
       <div className="container-content">
         <div className="infos">
-          <h1>New Post</h1>
+          <h1 className="register-title">Criar um Novo Post</h1>
           <form action="" onSubmit={handleNewPost}>
             <div className="content-infos">
-              <input 
-                type="text"
-                className="inputs" 
-                value={title}
-                required
-                placeholder="Título do Post" 
-                onChange={e => setTitle(e.target.value)}
-              />
+              <label htmlFor="title" className="labels">Título</label>
+              <div className="name-block">
+                <input 
+                  name="title" 
+                  id="title"
+                  type="text"
+                  className="inputs" 
+                  value={title}
+                  required
+                  placeholder="Título do Post" 
+                  onChange={e => setTitle(e.target.value)}
+                />
 
+                <select 
+                  name="category" 
+                  id="category"
+                  onChange={e => setIdCategory(e.target.value)}
+                  defaultValue="0"
+                  required
+                  className="select"
+                >              
+                  <option disabled value="0">Selecione uma Categoria</option>
+                  {categories.map( category => (
+                    <option
+                      value={category.id}
+                      key={category.id}
+                    >
+                      {category.description}
+                    </option>
+                  ))}
+
+                </select>
+
+              </div>
+
+              <label htmlFor="title" className="labels">Descrição</label>
               <input 
+                name="description" 
+                id="description"
                 type="text"
                 className="inputs" 
                 value={description}
@@ -93,32 +122,19 @@ function NewPost () {
                 onChange={e => setDescription(e.target.value)}
               />
 
+              <label htmlFor="title" className="labels">Conteúdo</label>
               <textarea 
+                name="content" 
+                id="content"
                 placeholder="Conteúdo" 
                 value={content}
                 required
                 onChange={e => setContent(e.target.value)}
               />
 
-              <select 
-                name="category" 
-                id="category"
-                onChange={e => setIdCategory(e.target.value)}
-                defaultValue="0"
-                required
-              >
-                <option disabled value="0">Selecione uma Categoria</option>
-                {categories.map( category => (
-                  <option
-                    value={category.id}
-                    key={category.id}
-                  >
-                    {category.description}
-                  </option>
-                ))}
-              </select>
-
-              <button type="submit">Criar</button>
+              <div className="button-class">
+                <button type="submit" className="button">Criar</button>
+              </div>
             </div>
             
 
