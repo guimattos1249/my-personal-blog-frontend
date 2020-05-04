@@ -6,6 +6,8 @@ import getToken from '../../components/getToken';
 
 import api from '../../services/api';
 
+import './style.css';
+
 function NewPost () {
   const [title, setTitle] = useState(''); 
   const [date] = useState(new Date().toLocaleDateString());
@@ -68,50 +70,61 @@ function NewPost () {
     <div>
       <Navbar />
       {/* TODO -> Style page NewPost */}
-      <h1>New Post</h1>
-      <form action="" onSubmit={handleNewPost}>
-        <input 
-          type="text" 
-          value={title}
-          required
-          placeholder="Título do Post" 
-          onChange={e => setTitle(e.target.value)}
-        />
-        <input 
-          type="text" 
-          value={description}
-          required
-          placeholder="Descrição do Post" 
-          onChange={e => setDescription(e.target.value)}
-        />
-        <textarea 
-          placeholder="Conteúdo" 
-          value={content}
-          required
-          onChange={e => setContent(e.target.value)}
-        />
+      <div className="container-content">
+        <div className="infos">
+          <h1>New Post</h1>
+          <form action="" onSubmit={handleNewPost}>
+            <div className="content-infos">
+              <input 
+                type="text"
+                className="inputs" 
+                value={title}
+                required
+                placeholder="Título do Post" 
+                onChange={e => setTitle(e.target.value)}
+              />
 
-        <select 
-          name="category" 
-          id="category"
-          onChange={e => setIdCategory(e.target.value)}
-          defaultValue="0"
-          required
-        >
-          <option disabled value="0">Selecione uma Categoria</option>
-          {categories.map( category => (
-            <option
-              value={category.id}
-              key={category.id}
-            >
-              {category.description}
-            </option>
-          ))}
-        </select>
+              <input 
+                type="text"
+                className="inputs" 
+                value={description}
+                required
+                placeholder="Descrição do Post" 
+                onChange={e => setDescription(e.target.value)}
+              />
 
-        <button type="submit">Criar</button>
-      </form>
-      
+              <textarea 
+                placeholder="Conteúdo" 
+                value={content}
+                required
+                onChange={e => setContent(e.target.value)}
+              />
+
+              <select 
+                name="category" 
+                id="category"
+                onChange={e => setIdCategory(e.target.value)}
+                defaultValue="0"
+                required
+              >
+                <option disabled value="0">Selecione uma Categoria</option>
+                {categories.map( category => (
+                  <option
+                    value={category.id}
+                    key={category.id}
+                  >
+                    {category.description}
+                  </option>
+                ))}
+              </select>
+
+              <button type="submit">Criar</button>
+            </div>
+            
+
+          </form>
+        </div>
+      </div>
     </div>
   );
 }
