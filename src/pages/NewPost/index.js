@@ -127,6 +127,7 @@ function NewPost () {
                 name="content" 
                 id="content"
                 placeholder="Conteúdo" 
+                className="textarea"
                 value={content}
                 required
                 onChange={e => setContent(e.target.value)}

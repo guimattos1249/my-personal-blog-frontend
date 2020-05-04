@@ -1,17 +1,18 @@
 /* fix scroll bar */
 .container-content {
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   display: flex;
   flex-direction: row;
   justify-content: center;
 }
 
 .infos {
+  margin-top: 10px;
   width: 100%;
   max-width: 800px;
-  height: 100%;
-  background-color: #FFF;
+  height: 550px;
+  background-color: #fafafa;
   box-shadow: 3px 3px #ebebeb;
   transition: transform 0.2s;
   animation: cardIn 500ms;
@@ -24,5 +25,20 @@
 
 .input-block {
   display: flex;
+}
+
+.textarea {
+  margin: 0 auto;
+  margin-top: 5px;
+  transition: border 0.2s;
+  transition: transform 0.2s;
+}
+
+.textarea:focus {
+  border: 1px solid #6c96d4;
+}
+
+.textarea:hover{
+  transform: scale(1.01);
 }
 

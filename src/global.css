@@ -9,7 +9,7 @@
 
 body {
   font: 400 14px Roboto, sans-serif;
-  background: #f0f0f5;
+  background: #e9ecfc;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -115,6 +115,9 @@ form textarea {
   transform: scale(1.01);
 }
 
+.select:focus {
+  border: 1px solid #6c96d4;
+}
 
 .links {
   display: flex;
