@@ -1,0 +1,15 @@
+.infos-category {
+  margin-top: 10px;
+  width: 100%;
+  max-width: 600px;
+  height: 280px;
+  background-color: #fafafa;
+  box-shadow: 3px 3px #ebebeb;
+  transition: transform 0.2s;
+  animation: cardIn 500ms;
+}
+
+.content-infos {
+  margin: auto;
+  max-width: 575px;
+}
