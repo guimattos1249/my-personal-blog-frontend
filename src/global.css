@@ -88,11 +88,10 @@ form textarea {
 }
 
 .inputs {
-  margin: 0 auto;
-  margin-bottom: 20px;
   margin-top: 5px;
   transition: border 0.2s;
   transition: transform 0.2s;
+  background-color: rgb(245, 245, 245);
 }
 
 .inputs:focus {

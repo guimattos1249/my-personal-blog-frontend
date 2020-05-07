@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
-import { FiArrowLeft } from 'react-icons/fi';
 
 import api from '../../services/api';
+
+import woman from '../../assets/woman.jpg';
 
 import './style.css';
 
@@ -42,18 +43,15 @@ function Register () {
 
   return (
     <div className="container">
-      <div className="card-register">
-        <div className="box"></div>
-
-        <h1 className="register-title">Cadastre-se</h1>
-        
-        <form onSubmit={handleRegister}>
-
-          <div className="content-register">
-            <label htmlFor="first_name" className="labels">
-              Nome
-            </label>
-            <div className="name-block">
+      <div className="card-container">
+        <div className="register-container">
+          
+          <h2 className="register-title">Faça Seu Cadastro</h2>
+          <div className="infos-register">
+            <form onSubmit={handleRegister}>
+              <label htmlFor="first_name" className="labels">
+                Nome
+              </label>
               <input 
                 className="inputs"
                 type="text"
@@ -63,6 +61,9 @@ function Register () {
                 placeholder="Digite seu Nome"
                 onChange={e => setFirstName(e.target.value)}
               />
+              <label htmlFor="first_name" className="labels">
+                Sobrenome
+              </label>
               <input 
                 className="inputs"
                 type="text"
@@ -72,52 +73,55 @@ function Register () {
                 placeholder="Digite seu Sobrenome"
                 onChange={e => setLastName(e.target.value)}
               />
-            </div>
-          
-            <label htmlFor="email" className="labels">
-              Email
-            </label>
-            <input 
-              className="inputs"
-              type="text"
-              value={email}
-              required
-              name="email" 
-              id="email" 
-              placeholder="Digite seu Email"
-              onChange={e => setEmail(e.target.value)}
-            />
+            
+              <label htmlFor="email" className="labels">
+                Email
+              </label>
+              <input 
+                className="inputs"
+                type="text"
+                value={email}
+                required
+                name="email" 
+                id="email" 
+                placeholder="Digite seu Email"
+                onChange={e => setEmail(e.target.value)}
+              />
 
-            <label htmlFor="password" className="labels">
-              Senha
-            </label>
-            <input
-              className="inputs" 
-              type="password"
-              value={password}
-              required
-              name="password" 
-              id="password" 
-              placeholder="Digite sua Senha"
-              onChange={e => setPassword(e.target.value)}
-            />
+              <label htmlFor="password" className="labels">
+                Senha
+              </label>
+              <input
+                className="inputs" 
+                type="password"
+                value={password}
+                required
+                name="password" 
+                id="password" 
+                placeholder="Digite sua Senha"
+                onChange={e => setPassword(e.target.value)}
+              />
 
-            <div className="button-class">
-              <button type="submit" className="button">
-                Cadastrar
-              </button>
-            </div>
+              <div className="button-class">
+                <button type="submit" className="button-register">
+                  Cadastrar
+                </button>
 
-            <Link to='/' className="links">
-              <FiArrowLeft size={20} color="#2e53a3" />
-              <p>Voltar para menu inicial!</p>
-            </Link>
+                <Link to='/' className="singin-link">
+                  <span>Sing In</span>
+                </Link>
+              </div>
+
+              
+            </form>
           </div>
-        </form>
-        
+                    
+        </div>
+
+        <div className="img-container">
+          <img src={woman} alt="" className="img"/>
+        </div>
       </div>
-      
-      
     </div>
   );
 }

@@ -1,47 +1,30 @@
-.content-register {
-  margin: auto;
-  max-width: 575px;
-}
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap');
 
-.button-class {
-  margin: auto;
-  max-width: 275px;
-}
-
-.box {
-  background-color: #206de0;
-  height: 8px;
+.card-container {
   width: 100%;
-}
-
-.card-register {
-  width: 100%;
-  max-width: 600px;
+  max-width: 950px;
   height: 100%;
-  max-height: 450px;
-  background-color: #fafafa;
+  max-height: 500px;
+  background-color: #FFF;
   box-shadow: 3px 3px #ebebeb;
+  border-radius: 8px;
   transition: transform 0.2s;
   animation: cardIn 500ms;
-}
-
-.container-title {
-  background-color: #ebebeb;
-}
-
-.name-block {
   display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 
-.name-block input + input {
-  margin-left: 5px;
+.register-container {
+  width: 100%;
 }
 
 .register-title {
   font-size: 22pt;
+  font-family: 'Roboto', sans-serif;
   color: #496083;
-  margin-top: 20px;
-  margin-bottom: 30px;
+  margin-bottom: 7px;
   text-align: center;
   transition: opacity 1s;
   transition: transform 0.2s;
@@ -52,42 +35,67 @@
   transform: scale(1.01);
 }
 
-.register {
+
+.infos-register {
+  width: 100%;
+  max-width: 355px;
+  height: 390px;
+  margin: auto;
+}
+
+.img-container {
+  width: 100%;
+  max-width: 500px;
+  height: 495px;
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+}
+
+.button-class {
+  margin: auto;
+  max-width: 495px;
   display: flex;
+  flex-direction: row;
   align-items: center;
-  margin-top: 10px;
-  color: #2e53a3;
-  font-size: 14px;
+}
+
+.button-register {
+  width: 300px;
+  height: 60px;
+  background: #206de0;
+  border-radius: 8px;
+  color: #FFF;
+  font-weight: 700;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 60px;
+  transition: filter 0.2s;
+  transition: transform 0.2s;
+}
+
+.button-register:hover {
+  filter: brightness(90%);
+  transform: scale(1.01);
+}
+
+.singin-link {
+  color: #f14d4e;
+  font-size: 18px;
   text-decoration: none;
   font-weight: 500;
-  transition: opacity 0.2s;
+  width: 100px;
+  margin-left: 25px;
+  border-bottom: 1px solid transparent;
+  transition: all ease-in 0.2s;
 }
 
-.register:hover {
+.singin-link:hover {
   opacity: 0.8;
+  transform: scale(1.01);
 }
 
-@media(max-width: 650px) {
-  .card-register {
-    width: 90%;
-    height: 100%;
-    max-height: 520px;
-    background-color: #FFF;
-    box-shadow: 3px 3px #ebebeb;
-    transition: transform 0.2s;
-    animation: cardIn 500ms;
-  }
-
-  .name-block {
-    display: inline;
-  }
-  
-  .name-block input + input {
-    margin-left: 0px;
-  }
-
-  .content-register {
-    margin: auto;
-    width: 90%;
-  }
-}
