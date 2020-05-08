@@ -48,7 +48,7 @@
 .img-container {
   width: 100%;
   max-width: 500px;
-  height: 495px;
+  height: 490px;
 }
 
 .img {
@@ -105,3 +105,15 @@
   color: #206de0;
 }
 
+.name-block {
+  display: flex;
+  width: 100%;
+}
+
+.name-block input + input {
+  margin-left: 5px;
+}
+
+.block {
+  max-width: 175px;
+}

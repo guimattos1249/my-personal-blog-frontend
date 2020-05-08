@@ -52,27 +52,26 @@ function Register () {
               <label htmlFor="first_name" className="labels">
                 Nome
               </label>
-              <input 
-                className="inputs"
-                type="text"
-                value={first_name} 
-                name="first_name" 
-                id="first_name" 
-                placeholder="Digite seu Nome"
-                onChange={e => setFirstName(e.target.value)}
-              />
-              <label htmlFor="first_name" className="labels">
-                Sobrenome
-              </label>
-              <input 
-                className="inputs"
-                type="text"
-                value={last_name}
-                name="last_name" 
-                id="last_name" 
-                placeholder="Digite seu Sobrenome"
-                onChange={e => setLastName(e.target.value)}
-              />
+              <div className="name-block">
+                <input 
+                  className="inputs block"
+                  type="text"
+                  value={first_name} 
+                  name="first_name" 
+                  id="first_name" 
+                  placeholder="Nome"
+                  onChange={e => setFirstName(e.target.value)}
+                />
+                <input 
+                  className="inputs block"
+                  type="text"
+                  value={last_name}
+                  name="last_name" 
+                  id="last_name" 
+                  placeholder="Sobrenome"
+                  onChange={e => setLastName(e.target.value)}
+                />
+              </div>
             
               <label htmlFor="email" className="labels">
                 Email
