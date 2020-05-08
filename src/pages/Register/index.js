@@ -110,11 +110,8 @@ function Register () {
                   <span>Sing In</span>
                 </Link>
               </div>
-
-              
             </form>
           </div>
-                    
         </div>
 
         <div className="img-container">

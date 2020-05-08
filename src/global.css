@@ -9,8 +9,10 @@
 
 body {
   font: 400 14px 'Roboto', sans-serif;
-  background: #e9ecfc;
   -webkit-font-smoothing: antialiased;
+  background: #e9ecfc;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #4CA1AF, #C4E0E5);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #4CA1AF, #C4E0E5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 input, button, textarea {
@@ -27,8 +29,8 @@ form input {
   color: #333;
   border: 1px solid #dcdce6;
   border-radius: 3px;
-  padding: 0 24px;
-  box-shadow: 1px 1px #ddd;
+  padding: 0 10px;
+  box-shadow: 1px 1px 1px #ddd;
 }
 
 form textarea {
@@ -42,6 +44,17 @@ form textarea {
   line-height: 24px;
   resize: none;
   margin-top: 5px;
+}
+
+aside {
+  display: flex;
+  flex-direction: column;
+  width: 320px;
+  height: 90vh;
+  background-color: #FFF;
+  border-radius: 0px 0px 8px 8px;
+  box-shadow: 0 0 14px 0 rgba(0, 0, 0, 0.253);
+  padding: 30px 20px;
 }
 
 .button {
@@ -76,7 +89,7 @@ form textarea {
 }
 
 .container-content {
-  width: 100vw;
+  width: 900px;
   height: 100%;
   display: flex;
   flex-direction: row;

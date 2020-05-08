@@ -5,12 +5,13 @@ import NavBar from '../../components/navbar';
 import './style.css';
 
 function Dashboard () {
-  const name = localStorage.getItem('first_name');
-
+  
   return (
-    <div>
+    <div id="app">      
       <NavBar />
-      <h1>Bem vindo {name}</h1>
+      <main>
+
+      </main>
     </div>
   );
 }

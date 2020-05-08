@@ -38,32 +38,34 @@ function NewCategory () {
 
   return (
     // TODO -> Style this page
-    <div>
+    <div id="app">
       <Navbar />
-      <div className="container-content">
-        <div className="infos-category">
-          <h1 className="register-title">Nova Categoria</h1>
-          <form action="" onSubmit={handleCategory}>
-            <div className="content-infos">
-              <label htmlFor="description" className="labels">Categoria</label>
-              <input 
-                type="text" 
-                placeholder="Digite a Categoria"
-                value={description}
-                required
-                name="description" 
-                id="description" 
-                className="inputs"
-                onChange={e => setDescription(e.target.value)}
-              />
+      <main>
+        <div className="container-content">
+          <div className="infos-category">
+            <h1 className="register-title">Nova Categoria</h1>
+            <form action="" onSubmit={handleCategory}>
+              <div className="content-infos">
+                <label htmlFor="description" className="labels">Categoria</label>
+                <input 
+                  type="text" 
+                  placeholder="Digite a Categoria"
+                  value={description}
+                  required
+                  name="description" 
+                  id="description" 
+                  className="inputs"
+                  onChange={e => setDescription(e.target.value)}
+                />
 
-              <div className="button-class">
-                <button type="submit" className="button">Cadastrar</button>
+                <div className="button-class">
+                  <button type="submit" className="button">Cadastrar</button>
+                </div>
               </div>
-            </div>
-          </form>
+            </form>
+          </div>
         </div>
-      </div>
+      </main>
     </div>
   );
 }

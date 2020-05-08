@@ -1,10 +1,13 @@
 import React from 'react';
 import { Link, useHistory } from 'react-router-dom';
+import { FiBookmark, FiFilePlus, FiHome, FiLogOut, FiInfo } from 'react-icons/fi';
 
 import './style.css';
 
 function Navbar () {
   const history = useHistory();
+
+  const name = localStorage.getItem('first_name');
 
   function handleLogout () {
     localStorage.clear();
@@ -13,31 +16,52 @@ function Navbar () {
   }
 
   return (
-    <nav className="navbar">
-      <Link to='/dashboard' className="nav-link logo">
-        my-personal-blog
-      </Link>
+    <aside>
+      <div id="nav">
+        <div className="welcome">
+          <p className="welcome-text">Olá {name},</p> 
+          <span className="welcome-text">Bem vindo ao </span>
+          <span className="title">
+            my-personal-blog
+          </span>
+        </div>
+        <div className="link-container">
+          <FiHome  size={22} color ="#0375B4"/>
+          <Link to='/dashboard' className="link">
+            Home
+          </Link>
+        </div>
 
-      <p className="pipe">|</p>
+        <div className="link-container">
+          <FiFilePlus size ={20} color="#0375B4" />
+          <Link to='/newpost' className="link">
+            Novo Post
+          </Link>
+        </div>
 
-      <Link to='/newpost' className="nav-link">
-        Novo Post
-      </Link>
-      <Link to='/newcategory' className="nav-link">
-        Nova Categoria
-      </Link>
+        <div className="link-container">
+          <FiBookmark  size={20} color ="#0375B4"/>
+          <Link to='/newcategory' className="link">
+            Nova Categoria
+          </Link>
+        </div>
+        
+        <div className="link-container">
+          <FiInfo size={20} color ="#0375B4" />
+          <Link to='/dashboard' className="link">
+            Sobre
+          </Link>
+        </div>
 
-      <div className="right-group">
-        {/* TODO -> Fix hover on this two links */}
-        <Link to='/dashboard' className="nav-link">
-          Sobre
-        </Link>
-        <Link to='/' className="nav-link" onClick={handleLogout}>
-          Sair
-        </Link>
+        <div className="link-container">
+          <FiLogOut size={20} color ="#0375B4" />
+          <Link to='/'  onClick={handleLogout} className="link">
+            Sair
+          </Link>
+        </div>
       </div>
-      
-    </nav>
+    </aside>
+    
   );
 }
 

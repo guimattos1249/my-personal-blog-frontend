@@ -5,7 +5,7 @@
   height: 100%;
   max-height: 500px;
   background-color: #FFF;
-  box-shadow: 3px 3px #ebebeb;
+  box-shadow: 3px 3px 10px rgb(126, 124, 124);
   border-radius: 8px;
   transition: transform 0.2s;
   animation: cardIn 500ms;
@@ -71,6 +71,7 @@
   border-radius: 8px;
   color: #FFF;
   font-weight: 700;
+  box-shadow: 3px 3px 10px #b6b5b5;
   display: inline-block;
   text-align: center;
   text-decoration: none;
