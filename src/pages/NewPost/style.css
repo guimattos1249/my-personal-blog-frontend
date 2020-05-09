@@ -1,18 +1,17 @@
-/* fix scroll bar */
 .infos {
-  margin-top: 10px;
   width: 100%;
   max-width: 800px;
   height: 550px;
-  background-color: #fafafa;
-  box-shadow: 3px 3px #ebebeb;
+  background-color: #FFF;
+  box-shadow: 0 0 14px 0 rgba(0, 0, 0, 0.253);
+  border-radius: 0px 0px 8px 8px;
   transition: transform 0.2s;
-  animation: cardIn 500ms;
+  animation: down 500ms;
 }
 
 .content-infos {
   margin: auto;
-  max-width: 775px;
+  max-width: 575px;
 }
 
 .input-block {
@@ -34,3 +33,21 @@
   transform: scale(1.01);
 }
 
+.post-title {
+  font-size: 22pt;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  color: #496083;
+  margin-top: 25px;
+  margin-bottom: 7px;
+  text-align: center;
+  transition: opacity 1s;
+  transition: transform 0.2s;
+  transition: color 0.5s;
+}
+
+.post-title:hover {
+  opacity: 0.8;
+  color: #f14d4e;
+  transform: scale(1.01);
+}

@@ -1,7 +1,6 @@
 #app {
   max-width: 1200px;
   margin: 0 auto;
-  /* padding: 60px 30px; */
 
   display: flex;
   flex-direction: row;
@@ -12,3 +11,36 @@
   margin-left: 30px;
 }
 
+.container-dashboard {
+  animation: cardIn 500ms;
+}
+
+.title {
+  font-size: 16pt;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 800;
+  color: rgb(3, 74, 180);
+  margin-bottom: 20px;
+  text-align: center;
+  transition: opacity 1s;
+  transition: transform 0.2s;
+  transition: color 0.5s;
+}
+
+.title:hover {
+  opacity: 0.8;
+  color: #f14d4e;
+  transform: scale(1.01);
+}
+
+.welcome-text {
+  font-size: 18pt;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  color: rgb(45, 76, 99);
+}
+
+.welcome {
+  margin-top: 50px;
+  margin-bottom: 20px;
+}

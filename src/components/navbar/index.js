@@ -7,8 +7,6 @@ import './style.css';
 function Navbar () {
   const history = useHistory();
 
-  const name = localStorage.getItem('first_name');
-
   function handleLogout () {
     localStorage.clear();
 
@@ -18,10 +16,8 @@ function Navbar () {
   return (
     <aside>
       <div id="nav">
-        <div className="welcome">
-          <p className="welcome-text">Olá {name},</p> 
-          <span className="welcome-text">Bem vindo ao </span>
-          <span className="title">
+        <div className="logo">
+          <span className="logo-nav">
             my-personal-blog
           </span>
         </div>

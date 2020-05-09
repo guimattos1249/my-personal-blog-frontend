@@ -17,8 +17,8 @@ function NewCategory () {
     e.preventDefault();
 
     try {
-      const response = await api.post('/categories', {
-        description 
+      const response = await api.post('/category', {
+          description 
         },
         {
         headers: {
@@ -37,15 +37,14 @@ function NewCategory () {
   }
 
   return (
-    // TODO -> Style this page
     <div id="app">
       <Navbar />
       <main>
         <div className="container-content">
           <div className="infos-category">
-            <h1 className="register-title">Nova Categoria</h1>
+            <h1 className="category-title">Nova Categoria</h1>
             <form action="" onSubmit={handleCategory}>
-              <div className="content-infos">
+              <div className="content-category-infos">
                 <label htmlFor="description" className="labels">Categoria</label>
                 <input 
                   type="text" 
