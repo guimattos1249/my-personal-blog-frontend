@@ -1,5 +1,5 @@
 .link {
-  color: #f14d4e;
+  color: #0375B4;
   font-size: 23px;
   font-weight: 300;
   margin-left: 15px;
@@ -7,15 +7,11 @@
   transition: color 0.2s;
 }
 
-.link:hover {
-  color: #0375B4;
-}
-
 .logo-nav {
   font-size: 16pt;
   font-family: 'Roboto', sans-serif;
   font-weight: 800;
-  color: #0375B4;
+  color: #f14d4e;
   margin-bottom: 20px;
   text-align: center;
   transition: opacity 1s;
@@ -25,7 +21,7 @@
 
 .logo-nav:hover {
   opacity: 0.8;
-  color: #f14d4e;
+  color: #0375B4;
   transform: scale(1.01);
 }
 

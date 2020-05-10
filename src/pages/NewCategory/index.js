@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+import { useHistory } from 'react-router-dom';
+
 import Navbar from '../../components/navbar';
 
 import getToken from '../../components/getToken';
@@ -12,12 +14,13 @@ function NewCategory () {
   const [description, setDescription] = useState('');
   const AuthStr = getToken();
 
+  const history = useHistory();
 
   async function handleCategory (e) {
     e.preventDefault();
 
     try {
-      const response = await api.post('/category', {
+      await api.post('/category', {
           description 
         },
         {
@@ -28,7 +31,7 @@ function NewCategory () {
       });
 
       alert(`Categoria ${description} incluída com sucesso`);
-      console.log(response);
+      history.push('/dashboard');
     }
     catch (err) {
       alert('Não foi possível Cadastrar a Categoria.');

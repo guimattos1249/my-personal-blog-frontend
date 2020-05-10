@@ -51,11 +51,18 @@ aside {
   display: flex;
   flex-direction: column;
   width: 320px;
-  height: 60vh;
+  height: 80vh;
   background-color: #FFF;
   border-radius: 0px 0px 8px 8px;
   box-shadow: 0 0 14px 0 rgba(0, 0, 0, 0.253);
   padding: 30px 20px;
+}
+
+main ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  list-style: none;
 }
 
 .button {

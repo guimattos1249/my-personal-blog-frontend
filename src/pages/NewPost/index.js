@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 
 import Navbar from '../../components/navbar';
 
+import { useHistory } from 'react-router-dom';
+
 import getToken from '../../components/getToken';
 
 import api from '../../services/api';
@@ -17,6 +19,8 @@ function NewPost () {
   const [categories, setCategories] = useState([]);
 
   const AuthStr = getToken();
+
+  const history = useHistory();
 
   useEffect(() => {
     async function handleCategory () {
@@ -43,7 +47,7 @@ function NewPost () {
     e.preventDefault();
 
     try {
-      const response = await api.post('/post', {
+      await api.post('/post', {
           title,
           date,
           description,
@@ -58,7 +62,7 @@ function NewPost () {
       });
 
       alert(`Post ${title} incluída com sucesso`);
-      console.log(response);
+      history.push('/dashboard');
     }
     catch (err) {
       alert('Não foi possível Cadastrar o Post.');
