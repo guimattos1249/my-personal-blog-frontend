@@ -14,7 +14,7 @@ function Post () {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState(''); 
   const [content, setContent] = useState('');
-  const [id_category, setIdCategory] = useState(0);
+  // const [id_category, setIdCategory] = useState(0);
   const [category, setCategory] = useState('');
   const { id } = useParams();
 
@@ -33,7 +33,10 @@ function Post () {
         setTitle(response.data.title);
         setDescription(response.data.description);
         setContent(response.data.content);
-        setIdCategory(response.data.id_category);
+        //TODO -> Fix, it's not setting id_category
+        // setIdCategory(response.data.id_category);
+
+        handleCategory(response.data.id_category);
       }
       catch (err) {
         alert('Não foi possível Buscar o Post.');
@@ -41,9 +44,10 @@ function Post () {
       }
     }
 
-    async function handleCategory () {
+    async function handleCategory (pId) {
       try {
-        const response = await api.get(`/category/${id_category}`, {
+        console.log(pId);
+        const response = await api.get(`/category/${pId}`, {
           headers: {
             'Authorization': AuthStr
           }
@@ -58,7 +62,6 @@ function Post () {
     }
 
     getPostInfos();
-    handleCategory();
 
   // eslint-disable-next-line
   }, []);
