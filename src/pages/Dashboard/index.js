@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 
-import NavBar from '../../components/navbar';
 import Post from '../../components/post';
 
 import api from '../../services/api';
@@ -33,26 +32,23 @@ function Dashboard () {
   }, [AuthStr]);
   
   return (
-    <div id="app">      
-      <NavBar />
-      <main>
-        <div className="container-dashboard">
-          <div className="welcome">
-            <span className="welcome-text">Olá {name}, </span> 
-            <span className="welcome-text">Bem vindo ao </span>
-            <span className="title">
-              my-personal-blog
-            </span>
-        </div>
+    <main>
+      <div className="container-dashboard">
+        <div className="welcome">
+          <span className="welcome-text">Olá {name}, </span> 
+          <span className="welcome-text">Bem vindo ao </span>
+          <span className="title">
+            my-personal-blog
+          </span>
+      </div>
 
-        <ul>
-          {posts.map(post => (
-            <Post key={post.id} post={post} />
-          ))}
-        </ul>
-        </div>
-      </main>
-    </div>
+      <ul>
+        {posts.map(post => (
+          <Post key={post.id} post={post} />
+        ))}
+      </ul>
+      </div>
+    </main>
   );
 }
 

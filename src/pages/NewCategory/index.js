@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 
 import { useHistory } from 'react-router-dom';
 
-import Navbar from '../../components/navbar';
-
 import getToken from '../../components/getToken';
 
 import api from '../../services/api';
@@ -40,35 +38,32 @@ function NewCategory () {
   }
 
   return (
-    <div id="app">
-      <Navbar />
-      <main>
-        <div className="container-content">
-          <div className="infos-category">
-            <h1 className="category-title">Nova Categoria</h1>
-            <form action="" onSubmit={handleCategory}>
-              <div className="content-category-infos">
-                <label htmlFor="description" className="labels">Categoria</label>
-                <input 
-                  type="text" 
-                  placeholder="Digite a Categoria"
-                  value={description}
-                  required
-                  name="description" 
-                  id="description" 
-                  className="inputs"
-                  onChange={e => setDescription(e.target.value)}
-                />
+    <main>
+      <div className="container-content">
+        <div className="infos-category">
+          <h1 className="category-title">Nova Categoria</h1>
+          <form action="" onSubmit={handleCategory}>
+            <div className="content-category-infos">
+              <label htmlFor="description" className="labels">Categoria</label>
+              <input 
+                type="text" 
+                placeholder="Digite a Categoria"
+                value={description}
+                required
+                name="description" 
+                id="description" 
+                className="inputs"
+                onChange={e => setDescription(e.target.value)}
+              />
 
-                <div className="button-class">
-                  <button type="submit" className="button">Cadastrar</button>
-                </div>
+              <div className="button-class">
+                <button type="submit" className="button">Cadastrar</button>
               </div>
-            </form>
-          </div>
+            </div>
+          </form>
         </div>
-      </main>
-    </div>
+      </div>
+    </main>
   );
 }
 

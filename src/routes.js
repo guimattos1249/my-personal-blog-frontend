@@ -7,6 +7,7 @@ import Dashboard from './pages/Dashboard';
 import NewPost from './pages/NewPost';
 import NewCategory from './pages/NewCategory';
 import Post from './pages/Post';
+import NavRoute from './components/NavRoute';
 
 export default function Routes() {
   return (
@@ -14,10 +15,10 @@ export default function Routes() {
       <Switch>
         <Route path="/" exact component={Login} />
         <Route path="/register" component={Register} />
-        <Route path="/dashboard" component={Dashboard} />
-        <Route path="/newpost" component={NewPost} />
-        <Route path="/newcategory" component={NewCategory} />
-        <Route path="/post/:id" component={Post} />
+        <NavRoute path="/dashboard" component={Dashboard} />
+        <NavRoute path="/newpost" component={NewPost} />
+        <NavRoute path="/newcategory" component={NewCategory} />
+        <NavRoute path="/post/:id" component={Post} />
       </Switch>
     </BrowserRouter>
   );

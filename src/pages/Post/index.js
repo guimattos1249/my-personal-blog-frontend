@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
 
-import Navbar from '../../components/navbar';
-
 import { Link, useParams } from 'react-router-dom';
 
 import getToken from '../../components/getToken';
@@ -69,71 +67,68 @@ function Post () {
 
 
   return (
-    <div id="app">
-      <Navbar />
-      <main>
-        <div className="container-content">
-          <div className="infos">
-            <h1 className="post-title">Post</h1>
-            <form>
-              <div className="content-infos">
-                <label htmlFor="title" className="labels">Título</label>
-                <div className="name-block">
-                  <input 
-                    name="title" 
-                    id="title"
-                    type="text"
-                    className="inputs" 
-                    value={title}
-                    required
-                    readOnly={true}
-                    placeholder="Título do Post" 
-                  />
-
-                  <select 
-                    name="category" 
-                    id="category"
-                    defaultValue="0"
-                    readOnly={true}
-                    required
-                    className="select"
-                  >              
-                    <option disabled value="0">{category}</option>
-                  </select>
-
-                </div>
-
-                <label htmlFor="title" className="labels">Descrição</label>
+    <main>
+      <div className="container-content">
+        <div className="infos">
+          <h1 className="post-title">Post</h1>
+          <form>
+            <div className="content-infos">
+              <label htmlFor="title" className="labels">Título</label>
+              <div className="name-block">
                 <input 
-                  name="description" 
-                  id="description"
+                  name="title" 
+                  id="title"
                   type="text"
                   className="inputs" 
-                  value={description}
+                  value={title}
+                  required
+                  readOnly={true}
+                  placeholder="Título do Post" 
+                />
+
+                <select 
+                  name="category" 
+                  id="category"
+                  defaultValue="0"
                   readOnly={true}
                   required
-                  placeholder="Descrição do Post" 
-                />
+                  className="select"
+                >              
+                  <option disabled value="0">{category}</option>
+                </select>
 
-                <label htmlFor="title" className="labels">Conteúdo</label>
-                <textarea 
-                  name="content" 
-                  id="content"
-                  placeholder="Conteúdo" 
-                  className="textarea"
-                  value={content}
-                  readOnly={true}
-                />
-
-                <div className="button-class">
-                  <Link to="/dashboard"className="button">Voltar</Link>
-                </div>
               </div>
-            </form>
-          </div>
+
+              <label htmlFor="title" className="labels">Descrição</label>
+              <input 
+                name="description" 
+                id="description"
+                type="text"
+                className="inputs" 
+                value={description}
+                readOnly={true}
+                required
+                placeholder="Descrição do Post" 
+              />
+
+              <label htmlFor="title" className="labels">Conteúdo</label>
+              <textarea 
+                name="content" 
+                id="content"
+                placeholder="Conteúdo" 
+                className="textarea"
+                value={content}
+                readOnly={true}
+              />
+
+              <div className="button-class">
+                <Link to="/dashboard"className="button">Voltar</Link>
+              </div>
+            </div>
+          </form>
         </div>
-      </main>
-    </div>
+      </div>
+    </main>
   );
 }
 
