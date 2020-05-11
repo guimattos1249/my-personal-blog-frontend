@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import Navbar from '../../components/navbar';
 
-import { useHistory } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 import getToken from '../../components/getToken';
 
@@ -10,65 +10,60 @@ import api from '../../services/api';
 
 import './style.css';
 
-function NewPost () {
-  const [title, setTitle] = useState(''); 
-  const [date] = useState(new Date().toLocaleDateString());
+function Post () {
+  const [title, setTitle] = useState('');
   const [description, setDescription] = useState(''); 
   const [content, setContent] = useState('');
-  const [id_category, setIdCategory] = useState();
-  const [categories, setCategories] = useState([]);
+  const [id_category, setIdCategory] = useState(0);
+  const [category, setCategory] = useState('');
+  const { id } = useParams();
 
   const AuthStr = getToken();
 
-  const history = useHistory();
-
   useEffect(() => {
+    async function getPostInfos() {
+      try {
+        const response = await api.get(`/post/${id}`, {
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': AuthStr
+          }
+        });
+
+        setTitle(response.data.title);
+        setDescription(response.data.description);
+        setContent(response.data.content);
+        setIdCategory(response.data.id_category);
+      }
+      catch (err) {
+        alert('Não foi possível Buscar o Post.');
+        console.log(err);
+      }
+    }
+
     async function handleCategory () {
       try {
-        const response = await api.get('categories', {
+        const response = await api.get(`/category/${id_category}`, {
           headers: {
             'Authorization': AuthStr
           }
         });
 
-        setCategories(response.data);
+        setCategory(response.data.description);
       }
       catch (err) {
-        alert('Não foi possível buscar Categorias.');
+        alert('Não foi possível Buscar a Categoria.');
         console.log(err);
       }
     }
 
+    getPostInfos();
     handleCategory();
+
   // eslint-disable-next-line
   }, []);
 
-  async function handleNewPost (e){
-    e.preventDefault();
 
-    try {
-      await api.post('/post', {
-          title,
-          date,
-          description,
-          content,
-          id_category
-        },
-        {
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': AuthStr
-        }
-      });
-
-      alert(`Post ${title} incluída com sucesso`);
-      history.push('/dashboard');
-    }
-    catch (err) {
-      alert('Não foi possível Cadastrar o Post.');
-      console.log(err);
-    }
-  }
 
   return (
     <div id="app">
@@ -76,8 +71,8 @@ function NewPost () {
       <main>
         <div className="container-content">
           <div className="infos">
-            <h1 className="post-title">Criar um Novo Post</h1>
-            <form action="" onSubmit={handleNewPost}>
+            <h1 className="post-title">Post</h1>
+            <form>
               <div className="content-infos">
                 <label htmlFor="title" className="labels">Título</label>
                 <div className="name-block">
@@ -88,28 +83,19 @@ function NewPost () {
                     className="inputs" 
                     value={title}
                     required
+                    readOnly={true}
                     placeholder="Título do Post" 
-                    onChange={e => setTitle(e.target.value)}
                   />
 
                   <select 
                     name="category" 
                     id="category"
-                    onChange={e => setIdCategory(e.target.value)}
                     defaultValue="0"
+                    readOnly={true}
                     required
                     className="select"
                   >              
-                    <option disabled value="0">Selecione uma Categoria</option>
-                    {categories.map( category => (
-                      <option
-                        value={category.id}
-                        key={category.id}
-                      >
-                        {category.description}
-                      </option>
-                    ))}
-
+                    <option disabled value="0">{category}</option>
                   </select>
 
                 </div>
@@ -121,9 +107,9 @@ function NewPost () {
                   type="text"
                   className="inputs" 
                   value={description}
+                  readOnly={true}
                   required
                   placeholder="Descrição do Post" 
-                  onChange={e => setDescription(e.target.value)}
                 />
 
                 <label htmlFor="title" className="labels">Conteúdo</label>
@@ -133,12 +119,11 @@ function NewPost () {
                   placeholder="Conteúdo" 
                   className="textarea"
                   value={content}
-                  required
-                  onChange={e => setContent(e.target.value)}
+                  readOnly={true}
                 />
 
                 <div className="button-class">
-                  <button type="submit" className="button">Criar</button>
+                  <Link to="/dashboard"className="button">Voltar</Link>
                 </div>
               </div>
             </form>
@@ -149,4 +134,4 @@ function NewPost () {
   );
 }
 
-export default NewPost;
+export default Post;

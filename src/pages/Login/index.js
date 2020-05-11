@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 
 import './style.css';
@@ -10,6 +10,14 @@ function Login () {
   const [password, setPassword] = useState('');
 
   const history = useHistory();
+
+  useEffect(() => {
+    function clearLocalStorage() {
+      localStorage.clear();
+    }
+
+    clearLocalStorage();
+  });
 
   async function handleSubmit (e) {
     e.preventDefault();

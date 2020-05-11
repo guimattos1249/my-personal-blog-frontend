@@ -23,35 +23,32 @@ function Post ({post}) {
       setCategoryDescription(response.data.description);
     }
 
-    console.log(category_description);
     getCategory();
     // eslint-disable-next-line
   }, [AuthStr])
 
   return (
-    <Link id="post-card">
-      <li>
-        <div className="post-item">  
-          <header>
-            <div className="title-post">
-              <div className="category-description">
-                <p id="category-description">{category_description}</p>
-              </div>
-              <strong id="post-title">{post.title}</strong>
-              <hr/>
-              <p id="date">{post.date}</p>
+    <li>
+      <div className="post-item">  
+        <header>
+          <div className="title-post">
+            <div className="category-description">
+              <p id="category-description">{category_description}</p>
             </div>
-          </header>
-          <p>{post.description}</p>
-          <div className="post-content">
-            <p>{post.content}</p>
+            <strong id="post-title">{post.title}</strong>
+            <hr/>
+            <p id="date">{post.date}</p>
           </div>
-          <div className="post-footer">
-            <Link to="/">Ver mais</Link>
-          </div>
+        </header>
+        <p>{post.description}</p>
+        <div className="post-content">
+          <p>{post.content}</p>
         </div>
-      </li>
-    </Link>
+        <div className="post-footer">
+          <Link to={{pathname: `/post/${post.id}`}} className="post-link">Ver mais</Link>
+        </div>
+      </div>
+    </li>
   );
 }
 

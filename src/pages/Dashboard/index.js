@@ -26,9 +26,6 @@ function Dashboard () {
       });
 
       setPosts(response.data);
-
-      console.log(posts);
-      console.log('here');
     }
 
     loadPosts();
