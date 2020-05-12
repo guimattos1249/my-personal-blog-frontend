@@ -4,9 +4,8 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Dashboard from './pages/Dashboard';
-import NewPost from './pages/NewPost';
-import NewCategory from './pages/NewCategory';
 import Post from './pages/Post';
+import NewCategory from './pages/NewCategory';
 import NavRoute from './components/NavRoute';
 
 export default function Routes() {
@@ -16,11 +15,10 @@ export default function Routes() {
         <Route path="/" exact component={Login} />
         <Route path="/register" component={Register} />
         <NavRoute path="/dashboard" component={Dashboard} />
-        <NavRoute path="/newpost" component={NewPost} />
+        <NavRoute path="/newpost" component={() => <Post isNew={true} />} />
         <NavRoute path="/newcategory" component={NewCategory} />
-        <NavRoute path="/post/:id" component={Post} />
+        <NavRoute path="/post/:id" component={() => <Post isNew={false} />} />
       </Switch>
     </BrowserRouter>
   );
-  
 }

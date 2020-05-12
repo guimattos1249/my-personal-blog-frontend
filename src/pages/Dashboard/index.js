@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import Post from '../../components/post';
+import Post from '../../components/postItem';
 
 import api from '../../services/api';
 
