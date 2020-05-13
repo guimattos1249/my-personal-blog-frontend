@@ -14,15 +14,14 @@
   color: #f14d4e;
   margin-bottom: 20px;
   text-align: center;
-  transition: opacity 1s;
-  transition: transform 0.2s;
   transition: color 0.5s;
+  -webkit-transition: color 0.5s;
 }
 
 .logo-nav:hover {
-  opacity: 0.8;
   color: #0375B4;
-  transform: scale(1.01);
+  transition: color 0.5s;
+  -webkit-transition: color 0.5s;
 }
 
 .logo {
@@ -41,4 +40,29 @@
 .link-container:hover {
   opacity: 0.8;
   transform: scale(1.01);
+}
+
+.separator {
+  color: rgb(107, 154, 179);
+  margin: 15px 0px;
+}
+
+.greetings {
+  font-size: 1em;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  color: rgba(45, 58, 65, 0.938);
+}
+
+.greetings .link {
+  font-size: 1em;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+}
+
+.greetings .link:hover {
+  opacity: 0.8;
+  transform: scale(1.01);
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
 }

@@ -55,6 +55,18 @@ function Navbar () {
             Sair
           </Link>
         </div>
+
+        <hr className="separator"/>
+
+        <div className="greetings">
+          <p>O my-personal-blog, é um sistema de criação de posts, para você se 
+            organizar com suas anotaçoes.
+            <a href='https://github.com/guimattos1249' className="link" target="blank">
+              Me encontre no github
+            </a>
+          </p>
+
+        </div>        
       </div>
     </aside>
     
