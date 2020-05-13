@@ -33,7 +33,7 @@ function Register () {
       localStorage.setItem('email', email);
       localStorage.setItem('token', response.data.token);
 
-      history.push('/dashboard');
+      history.push('/home');
     }
     catch (err) {
       alert('Não foi possível Realizar o cadastro, tente novamente!');

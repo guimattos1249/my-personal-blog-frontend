@@ -29,7 +29,7 @@ function NewCategory () {
       });
 
       alert(`Categoria ${description} incluída com sucesso`);
-      history.push('/dashboard');
+      history.push('/home');
     }
     catch (err) {
       alert('Não foi possível Cadastrar a Categoria.');

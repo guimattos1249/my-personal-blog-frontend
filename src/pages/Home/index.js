@@ -8,7 +8,7 @@ import getToken from '../../components/getToken';
 
 import './style.css';
 
-function Dashboard () {
+function Home () {
   const [posts, setPosts] = useState([]);
 
   const name = localStorage.getItem('first_name');
@@ -52,4 +52,4 @@ function Dashboard () {
   );
 }
 
-export default Dashboard;
+export default Home;

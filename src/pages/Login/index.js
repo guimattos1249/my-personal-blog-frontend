@@ -32,7 +32,7 @@ function Login () {
       localStorage.setItem('first_name', response.data.first_name);
       localStorage.setItem('token', response.data.token);
       
-      history.push('/dashboard');
+      history.push('/home');
     }
     catch (err) {
       alert('Não foi possível Realizar o login. Verifique seu usuário e senha e tente novamente!');

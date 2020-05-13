@@ -9,7 +9,7 @@ import './style.css';
 
 function Post ({ isNew }) {
   const [title, setTitle] = useState(''); 
-  const [date] = useState(new Date().toLocaleDateString());
+  const [date] = useState(new Date());
   const [description, setDescription] = useState(''); 
   const [content, setContent] = useState('');
   const [id_category, setIdCategory] = useState(0);
@@ -67,7 +67,6 @@ function Post ({ isNew }) {
   
       async function getCategoryInfos (pId) {
         try {
-          console.log(pId);
           const response = await api.get(`/category/${pId}`, {
             headers: {
               'Authorization': AuthStr
@@ -89,6 +88,8 @@ function Post ({ isNew }) {
 
   async function handleNewPost (e){
     e.preventDefault();
+
+    console.log(date)
 
     if(isNew) {
       try {
@@ -114,7 +115,7 @@ function Post ({ isNew }) {
       }   
     }
     
-    history.push('/dashboard');    
+    history.push('/home');    
   }
 
   function handleSelectedCategory(e) {

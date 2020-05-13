@@ -23,7 +23,7 @@ function Navbar () {
         </div>
         <div className="link-container">
           <FiHome  size={22} color ="#0375B4"/>
-          <Link to='/dashboard' className="link">
+          <Link to='/home' className="link">
             Home
           </Link>
         </div>
@@ -44,7 +44,7 @@ function Navbar () {
         
         <div className="link-container">
           <FiInfo size={20} color ="#0375B4" />
-          <Link to='/dashboard' className="link">
+          <Link to='/home' className="link">
             Sobre
           </Link>
         </div>
