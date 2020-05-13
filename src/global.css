@@ -48,6 +48,9 @@ form textarea {
 }
 
 aside {
+  /* position: fixed;
+  top: 0;
+  right: 25px; */
   display: flex;
   flex-direction: column;
   width: 320px;
