@@ -15,12 +15,14 @@
   margin-bottom: 20px;
   text-align: center;
   transition: color 0.5s;
+  font-family: 'Jost', sans-serif;
   -webkit-transition: color 0.5s;
 }
 
 .logo-nav:hover {
   color: #0375B4;
   transition: color 0.5s;
+  
   -webkit-transition: color 0.5s;
 }
 

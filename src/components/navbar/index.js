@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useHistory } from 'react-router-dom';
-import { FiBookmark, FiFilePlus, FiHome, FiLogOut, FiInfo } from 'react-icons/fi';
+import { FiBookmark, FiClipboard, FiFilePlus, FiHome, FiLogOut, FiInfo } from 'react-icons/fi';
 
 import './style.css';
 
@@ -29,6 +29,13 @@ function Navbar () {
         </div>
 
         <div className="link-container">
+          <FiClipboard size ={20} color="#0375B4" />
+          <Link to='/dashboard' className="link">
+            Dashboard
+          </Link>
+        </div>
+
+        <div className="link-container">
           <FiFilePlus size ={20} color="#0375B4" />
           <Link to='/newpost' className="link">
             Novo Post
@@ -49,7 +56,7 @@ function Navbar () {
           </Link>
         </div>
 
-        <div className="link-container">
+        <div className="link-container out">
           <FiLogOut size={20} color ="#0375B4" />
           <Link to='/'  onClick={handleLogout} className="link">
             Sair

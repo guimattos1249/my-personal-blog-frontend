@@ -1,0 +1,22 @@
+.post-dashboard {
+  width: 800px;
+  max-width: 750px;
+  height: 70px;
+  padding: 15px;
+  box-shadow: 0 0 14px 0 rgba(0, 0, 0, 0.253);
+  background-color: #FFF;
+  margin: 15px;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+}
+.post-dashboard:hover {
+  transform: scale(1.007);
+  border-radius: 0px 10px 10px 10px;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+}
+
+.dashboard-title {
+  display: inline-block;
+  width: 170px;
+}

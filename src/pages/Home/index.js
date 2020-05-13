@@ -40,13 +40,13 @@ function Home () {
           <span className="title">
             my-personal-blog
           </span>
-      </div>
+        </div>
 
-      <ul>
-        {posts.map(post => (
-          <Post key={post.id} post={post} />
-        ))}
-      </ul>
+        <ul className="list-post-home">
+          {posts.map(post => (
+            <Post key={post.id} post={post} />
+          ))}
+        </ul>
       </div>
     </main>
   );
