@@ -33,7 +33,7 @@ function Home () {
   
   return (
     <main>
-      <div className="container-dashboard">
+      <div className="container-home">
         <div className="welcome">
           <span className="welcome-text">Olá {name}, </span> 
           <span className="welcome-text">Bem vindo ao </span>

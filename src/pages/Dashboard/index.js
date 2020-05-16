@@ -29,18 +29,19 @@ function Dashboard () {
     }
     
     getPostsDashboard();
-  }, [AuthStr]);
+  }, [AuthStr, posts]);
 
   return (
     <main>
-      <div>
+      <div className="container-dashboard">
         <h1>Dashboard</h1>
-
-        <ul className="list-post-dashboard">
-          {posts.map(post => (
-            <ListPostsDashboard post={post} key={post.id} />
-          ))}
-        </ul>
+        <div className="container-list-post">
+          <ul className="list-post-dashboard">
+            {posts.map(post => (
+              <ListPostsDashboard post={post} key={post.id} />
+            ))}
+          </ul>
+        </div>
       </div>
     </main>
   );

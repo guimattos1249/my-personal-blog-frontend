@@ -126,7 +126,7 @@ function Post ({ isNew }) {
     <main>
       <div className="container-content">
         <div className="infos">
-          <h1 className="post-title">Criar um Novo Post</h1>
+          <h1 className="post-title">{ isNew === true ? 'Criar um Novo Post' : 'Post' }</h1>
           <form action="" onSubmit={handleNewPost}>
             <div className="content-infos">
               <label htmlFor="title" className="labels">Título</label>

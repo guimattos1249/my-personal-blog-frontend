@@ -1,19 +1,86 @@
 .post-dashboard {
   width: 800px;
-  max-width: 750px;
-  height: 70px;
+  max-width: 550px;
+  margin: 0 auto;
+  height: 80px;
   padding: 15px;
   box-shadow: 0 0 14px 0 rgba(0, 0, 0, 0.253);
   background-color: #FFF;
+  border-radius: 3px;
   margin: 15px;
   transition: all 0.5s;
   -webkit-transition: all 0.5s;
 }
+
+.content-list-post {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.container-list-post {
+  margin:0 auto;
+}
+
 .post-dashboard:hover {
   transform: scale(1.007);
   border-radius: 0px 10px 10px 10px;
+  background: #0A1032;
+  color: #FFF;
   transition: all 0.5s;
   -webkit-transition: all 0.5s;
+}
+
+.dashboard-date {
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+}
+
+.post-dashboard:hover .dashboard-date:hover {
+  color: #f14d4e;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+}
+
+.icons-list {
+  color: #0A1032;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+}
+
+.delete,
+.edit {
+  cursor: pointer;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+}
+
+.post-dashboard:hover .edit:hover {
+  color: rgb(243, 243, 102);
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+}
+
+.post-dashboard:hover .delete:hover {
+  color: #f14d4e;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+}
+
+.post-dashboard:hover .icons-list {
+  color: #FFF;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+}
+
+.post-list-description {
+  margin-top: 15px;
+}
+
+.actions-list-post {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .dashboard-title {

@@ -21,17 +21,12 @@
 .textarea {
   margin: 0 auto;
   margin-top: 5px;
-  transition: border 0.2s;
-  transition: transform 0.2s;
 }
 
 .textarea:focus {
   border: 1px solid #6c96d4;
 }
 
-.textarea:hover{
-  transform: scale(1.01);
-}
 
 .post-title {
   font-size: 22pt;
@@ -41,9 +36,7 @@
   margin-top: 25px;
   margin-bottom: 7px;
   text-align: center;
-  transition: opacity 1s;
-  transition: transform 0.2s;
-  transition: color 0.5s;
+  transition: all 1s;
 }
 
 .post-title:hover {

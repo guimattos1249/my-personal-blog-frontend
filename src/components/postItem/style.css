@@ -44,10 +44,14 @@ hr {
   max-width: 150px;
   margin-bottom: 7px;
   float: right;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
 }
 
 .post-item:hover .category-description {
   background-color: #303553;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
 }
 
 .post-item:hover #date {
