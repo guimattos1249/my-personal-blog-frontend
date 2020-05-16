@@ -19,7 +19,7 @@ export default function Routes() {
         <NavRoute path="/dashboard" component={Dashboard} />
         <NavRoute path="/newpost" component={() => <Post isNew={true} />} />
         <NavRoute path="/newcategory" component={NewCategory} />
-        <NavRoute path="/post/:id" component={() => <Post isNew={false} />} />
+        <NavRoute path="/post/:type/:id" component={() => <Post isNew={false} />} />
       </Switch>
     </BrowserRouter>
   );

@@ -17,12 +17,13 @@ function Post ({ isNew }) {
   const [category, setCategory] = useState('');
 
   const { id } = useParams();
+  const { type } = useParams();
 
   const AuthStr = getToken();
 
   const history = useHistory();
 
-  useEffect(() => {   
+  useEffect(() => {
     if(isNew) {
       async function handleCategory () {
         try {
@@ -138,7 +139,7 @@ function Post ({ isNew }) {
                   className="inputs" 
                   value={title}
                   required
-                  readOnly={!isNew}
+                  readOnly={!isNew && type === 'r'}
                   placeholder="Título do Post" 
                   onChange={e => setTitle(e.target.value)}
                 />
@@ -149,7 +150,7 @@ function Post ({ isNew }) {
                   onChange={handleSelectedCategory}
                   defaultValue={isNew === true ? "0" : "1"}
                   required={isNew}
-                  readOnly={!isNew}
+                  readOnly={!isNew && type === 'r'}
                   className="select"
                 >              
                   <option disabled value="0">Selecione uma Categoria</option>
@@ -178,7 +179,7 @@ function Post ({ isNew }) {
                 type="text"
                 className="inputs" 
                 value={description}
-                readOnly={!isNew}
+                readOnly={!isNew && type === 'r'}
                 required
                 placeholder="Descrição do Post" 
                 onChange={e => setDescription(e.target.value)}
@@ -191,7 +192,7 @@ function Post ({ isNew }) {
                 placeholder="Conteúdo" 
                 className="textarea"
                 value={content}
-                readOnly={!isNew}
+                readOnly={!isNew && type === 'r'}
                 required
                 onChange={e => setContent(e.target.value)}
               />

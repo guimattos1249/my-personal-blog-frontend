@@ -48,6 +48,11 @@
   -webkit-transition: all 0.5s;
 }
 
+.edit-link {
+  color: #0A1032;
+  text-decoration: none;
+}
+
 .delete,
 .edit {
   cursor: pointer;
@@ -68,6 +73,12 @@
 }
 
 .post-dashboard:hover .icons-list {
+  color: #FFF;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+}
+
+.post-dashboard:hover .edit-link {
   color: #FFF;
   transition: all 0.5s;
   -webkit-transition: all 0.5s;

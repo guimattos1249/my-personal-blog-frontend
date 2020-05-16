@@ -45,7 +45,7 @@ function Post ({post}) {
           <p>{post.content}</p>
         </div>
         <div className="post-footer">
-          <Link to={{pathname: `/post/${post.id}`}} className="post-link">Ver mais</Link>
+          <Link to={{pathname: `/post/r/${post.id}`}} className="post-link">Ver mais</Link>
         </div>
       </div>
     </li>

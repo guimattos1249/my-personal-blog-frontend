@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { FiEdit3, FiTrash } from 'react-icons/fi';
 
 import api from '../../services/api';
@@ -39,7 +40,9 @@ function ListPostsDashboard ({ post }) {
 
           <div className="actions-list-post">
             <div className="edit">
-              <FiEdit3 className="edit" size={22} onClick={() => alert('clicou')}/>
+              <Link to={{pathname: `/post/e/${post.id}`}} className="edit-link">
+                <FiEdit3 className="edit" size={22} />
+              </Link>
             </div>
             <div className="delete">
               <FiTrash className="delete" size={22} onClick={handleDeletePost}/>
