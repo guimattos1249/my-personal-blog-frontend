@@ -23,22 +23,6 @@ function Post ({ isNew }) {
 
   const history = useHistory();
 
-  async function handleCategory () {
-    try {
-      const response = await api.get('categories', {
-        headers: {
-          'Authorization': AuthStr
-        }
-      });
-
-      setCategories(response.data);
-    }
-    catch (err) {
-      alert('Não foi possível buscar Categorias.');
-      console.log(err);
-    }
-  }
-
   async function getPostInfos() {
     try {
       const response = await api.get(`/post/${id}`, {
@@ -51,12 +35,9 @@ function Post ({ isNew }) {
       setTitle(response.data.title);
       setDescription(response.data.description);
       setContent(response.data.content);
-      //TODO -> Fix, it's not setting id_category
       setIdCategory(response.data.id_category);
-      if(type === 'r')
-        getCategoryInfos (response.data.id_category);
-      else
-        getCategoryInfos (response.data.id_category);
+
+      getCategoryInfos (response.data.id_category);
     }
     catch (err) {
       alert('Não foi possível Buscar o Post.');
@@ -76,6 +57,22 @@ function Post ({ isNew }) {
     }
     catch (err) {
       alert('Não foi possível Buscar a Categoria.');
+      console.log(err);
+    }
+  }
+
+  async function handleCategory () {
+    try {
+      const response = await api.get('categories', {
+        headers: {
+          'Authorization': AuthStr
+        }
+      });
+
+      setCategories(response.data);
+    }
+    catch (err) {
+      alert('Não foi possível buscar Categorias.');
       console.log(err);
     }
   }
@@ -113,11 +110,11 @@ function Post ({ isNew }) {
       catch (err) {
         alert('Não foi possível Cadastrar o Post.');
         console.log(err);
-      }   
+      }
+      
+      history.push('/home');    
     }
-
-    if(type === 'e') {
-      console.log(id_category);
+    else if(type === 'e') {
       try {
         await api.put(`/post/${id}`, {
           title,
@@ -133,15 +130,17 @@ function Post ({ isNew }) {
           }
         });
 
-        alert(`Post ${title} incluída com sucesso`);
+        alert(`Post ${title} Alterado com sucesso`);
       }
       catch (err) {
         alert('Não foi possível Cadastrar o Post.');
         console.log(err);
-      }   
+      }
+
+      history.push('/dashboard');    
     }
-    
-    history.push('/home');    
+    else 
+      history.push('/home');    
   }
 
   function handleSelectedCategory(e) {

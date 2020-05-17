@@ -11,6 +11,8 @@ function Dashboard () {
 
   const AuthStr = getToken();
 
+  //TODO -> Fix to show my posts updated after delete post
+
   useEffect(() => {
     async function getPostsDashboard() {
       try {
