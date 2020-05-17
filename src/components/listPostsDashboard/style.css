@@ -86,6 +86,10 @@
 
 .post-list-description {
   margin-top: 15px;
+  overflow: hidden;
+  max-width: 430px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .actions-list-post {

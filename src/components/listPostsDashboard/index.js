@@ -35,7 +35,7 @@ function ListPostsDashboard ({ post }) {
           <div className="infos-list-post">
             <span className="dashboard-title">{post.title}</span>
             <span className="dashboard-date">{post.date}</span>
-            <p className="post-list-description">{post.description}</p>
+            <p className="post-list-description">{post.content}</p>
           </div>
 
           <div className="actions-list-post">

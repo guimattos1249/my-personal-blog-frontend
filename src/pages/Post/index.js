@@ -23,65 +23,67 @@ function Post ({ isNew }) {
 
   const history = useHistory();
 
+  async function handleCategory () {
+    try {
+      const response = await api.get('categories', {
+        headers: {
+          'Authorization': AuthStr
+        }
+      });
+
+      setCategories(response.data);
+    }
+    catch (err) {
+      alert('Não foi possível buscar Categorias.');
+      console.log(err);
+    }
+  }
+
+  async function getPostInfos() {
+    try {
+      const response = await api.get(`/post/${id}`, {
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': AuthStr
+        }
+      });
+
+      setTitle(response.data.title);
+      setDescription(response.data.description);
+      setContent(response.data.content);
+      //TODO -> Fix, it's not setting id_category
+      setIdCategory(response.data.id_category);
+      if(type === 'r')
+        getCategoryInfos (response.data.id_category);
+      else
+        getCategoryInfos (response.data.id_category);
+    }
+    catch (err) {
+      alert('Não foi possível Buscar o Post.');
+      console.log(err);
+    }
+  }
+
+  async function getCategoryInfos (pId) {
+    try {
+      const response = await api.get(`/category/${pId}`, {
+        headers: {
+          'Authorization': AuthStr
+        }
+      });
+
+      setCategory(response.data.description);
+    }
+    catch (err) {
+      alert('Não foi possível Buscar a Categoria.');
+      console.log(err);
+    }
+  }
+
   useEffect(() => {
     if(isNew) {
-      async function handleCategory () {
-        try {
-          const response = await api.get('categories', {
-            headers: {
-              'Authorization': AuthStr
-            }
-          });
-  
-          setCategories(response.data);
-        }
-        catch (err) {
-          alert('Não foi possível buscar Categorias.');
-          console.log(err);
-        }
-      }
-  
       handleCategory();
     } else {
-      async function getPostInfos() {
-        try {
-          const response = await api.get(`/post/${id}`, {
-            headers: {
-              'Content-Type': 'application/json',
-              'Authorization': AuthStr
-            }
-          });
-  
-          setTitle(response.data.title);
-          setDescription(response.data.description);
-          setContent(response.data.content);
-          //TODO -> Fix, it's not setting id_category
-          // setIdCategory(response.data.id_category);
-  
-          getCategoryInfos(response.data.id_category);
-        }
-        catch (err) {
-          alert('Não foi possível Buscar o Post.');
-          console.log(err);
-        }
-      }
-  
-      async function getCategoryInfos (pId) {
-        try {
-          const response = await api.get(`/category/${pId}`, {
-            headers: {
-              'Authorization': AuthStr
-            }
-          });
-  
-          setCategory(response.data.description);
-        }
-        catch (err) {
-          alert('Não foi possível Buscar a Categoria.');
-          console.log(err);
-        }
-      }
-  
       getPostInfos();
     }
   // eslint-disable-next-line
@@ -89,8 +91,6 @@ function Post ({ isNew }) {
 
   async function handleNewPost (e){
     e.preventDefault();
-
-    console.log(date)
 
     if(isNew) {
       try {
@@ -108,6 +108,31 @@ function Post ({ isNew }) {
           }
         });
   
+        alert(`Post ${title} incluída com sucesso`);
+      }
+      catch (err) {
+        alert('Não foi possível Cadastrar o Post.');
+        console.log(err);
+      }   
+    }
+
+    if(type === 'e') {
+      console.log(id_category);
+      try {
+        await api.put(`/post/${id}`, {
+          title,
+          date,
+          description,
+          content,
+          id_category
+        },
+        {
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': AuthStr
+          }
+        });
+
         alert(`Post ${title} incluída com sucesso`);
       }
       catch (err) {
@@ -199,7 +224,7 @@ function Post ({ isNew }) {
 
               <div className="button-class">
                 <button type="submit" className="button">
-                  { isNew === true ? 'Criar' : 'Voltar' }
+                  { isNew === true ? 'Criar' : type === 'e' ? 'Editar' : 'Voltar' }
                 </button>
               </div>
             </div>

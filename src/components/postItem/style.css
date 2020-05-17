@@ -84,10 +84,10 @@ hr {
 .post-content {
   margin-top: 10px;
   overflow: hidden;
-    position: relative;
-    line-height: 1.2em;
-    max-height: 4.9em; /* aqui vc controla a altura da caixa de texto */
-    text-align: justify;
+  position: relative;
+  line-height: 1.2em;
+  max-height: 4.9em; /* aqui vc controla a altura da caixa de texto */
+  text-align: justify;
 }
 
 .post-content:before {

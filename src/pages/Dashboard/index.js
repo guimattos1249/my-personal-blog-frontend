@@ -29,7 +29,7 @@ function Dashboard () {
     }
     
     getPostsDashboard();
-  }, [AuthStr, posts]);
+  }, [AuthStr]);
 
   return (
     <main>
